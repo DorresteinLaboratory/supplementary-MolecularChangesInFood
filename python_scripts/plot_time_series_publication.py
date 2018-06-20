@@ -35,7 +35,6 @@ kroger = pd.concat([kroger, okroger])
 meanlist_kroger = [pd.DataFrame(kroger.groupby('ATTRIBUTE_age')[x].mean()) for x in kroger.columns[4:]]
 meantab_kroger = pd.concat(meanlist_kroger, axis=1)
 cortab_kroger = meantab_kroger.apply(lambda a: stats.spearmanr(a, range(7)))
-IBUTE_age', 'ATTRIBUTE_distributor_brand']
 pval_kroger = [x[1] for x in cortab_kroger]
 #pval_kroger = multipletests(pval_kroger, method = 'fdr_bh')[1]
 
